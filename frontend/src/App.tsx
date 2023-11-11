@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import PageLoader from "./utils/PageLoader";
 
 function App() {
 
@@ -10,13 +11,13 @@ function App() {
     <div className="bg-primary min-h-screen text-white">
       <Routes>
         <Route path="/signup" element={
-          <Suspense fallback="Loading...">
+          <Suspense fallback={<PageLoader />}>
             <Signup />
           </Suspense>
         } />
 
         <Route path="/login" element={
-          <Suspense fallback="Loading...">
+          <Suspense fallback={<PageLoader />}>
             <Login />
           </Suspense>
         } />

@@ -68,7 +68,7 @@ function Login() {
 
                 <div className='text-center mt-4'>
                     <p>Don't have an account? 
-                        <Link to='/login' className='font-bold text-green ml-2'>Register</Link>
+                        <Link to='/signup' className='font-bold text-green ml-2'>Register</Link>
                     </p>
                 </div>
             </div>
