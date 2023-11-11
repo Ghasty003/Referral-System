@@ -23,14 +23,10 @@ export async function Signup(req: Request, res: Response) {
 
         const token = createToken({ _id: user._id });
 
-        const expiryDate = new Date();
-        expiryDate.setDate(expiryDate.getDate() + 7);
-        res.cookie("access-token", token, { expires: expiryDate, httpOnly: true });
-
-        res.json("User signed up successfully").status(201);
+        res.status(201).json({msg: "User signed up successfully", token });
     } catch (error) {
-        res.json((<Error>error).message);
-        console.log(error);
+        res.status(400).json((<Error>error).message);
+        console.log("Here", error);
     }
 }
 
@@ -43,11 +39,7 @@ export async function Login(req: Request, res: Response) {
 
         const token = createToken({ _id: user._id });
 
-        const expiryDate = new Date();
-        expiryDate.setDate(expiryDate.getDate() + 7);
-        res.cookie("access-token", token, { expires: expiryDate, httpOnly: true });
-
-        res.json("User signed In successfully").status(201);
+        res.status(200).json({msg: "User signed up successfully", token });
     } catch (error) {
         res.json((<Error>error).message);
         console.log(error);
